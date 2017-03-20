@@ -1,0 +1,13 @@
+<div class="span0 well votingWidget">
+  <!-- The upVoteCount() and downVoteCount() methods are bound to the scope within the upVoteDirective.js  -->
+  <!-- When these methods are called, it'll call the function assigned to the component's attribute respectively -->
+  <div class="votingButton" ng-click="onUpVote();">
+    <i class="icon-chevron-up icon-white"></i>
+  </div>
+  <div class="badge badge-inverse">
+    <div>{{ totalVotes }}</div>
+  </div>
+  <div class="votingButton" ng-click="onDownVote();">
+    <i class="icon-chevron-down"></i>
+  </div>
+</div>

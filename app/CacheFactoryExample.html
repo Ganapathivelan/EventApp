@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="eventsApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Event Registration</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./css/app.css">
+</head>
+<body ng-cloak>
+  <div class="container">
+    <div class="navbar">
+      <div class="navbar-inner">
+        <ul class="nav">
+          <li><a href="NewEvent.html">Create new event</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div ng-controller="MyCacheExampleController as myCacheExampleCtrl" style="padding: 0 10px;">
+    <p style="width: 50px; display: inline-block;">Key: </p>
+    <input type="text" ng-model="myCacheExampleCtrl.key" />
+    <br />
+    <p style="width: 50px; display: inline-block;">Value: </p>
+    <input type="text" ng-model="myCacheExampleCtrl.value" />
+    <br/>
+    <button class="btn" ng-click="myCacheExampleCtrl.myCacheExampleCtrl(myCacheExampleCtrl.key, myCacheExampleCtrl.value);">Add to Cache</button>
+    <br />
+    <br />
+    <input type="text" ng-model="myCacheExampleCtrl.keyToRead" />
+    <h3>Value from Cache: {{ myCacheExampleCtrl.readFromCache(myCacheExampleCtrl.keyToRead); }}</h3>
+    <h3>Cache details: {{ myCacheExampleCtrl.getCacheStats(); }}</h3>
+  </div>
+  <script src="./lib/bootstrap.min.js" charset="utf-8"></script>
+  <script src="../node_modules/angular/angular.min.js" charset="utf-8"></script>
+  <script src="../node_modules/angular-resource/angular-resource.min.js" charset="utf-8"></script>
+  <script src="./js/app.js" charset="utf-8"></script>
+  <script src="./js/controllers/EventsController.js" charset="utf-8"></script>
+  <script src="./js/controllers/EditEventsController.js" charset="utf-8"></script>
+  <script src="./js/controllers/EditProfileController.js" charset="utf-8"></script>
+  <script src="./js/controllers/CacheSampleController.js" charset="utf-8"></script>
+  <script src="./js/filters.js" charset="utf-8"></script>
+  <script src="./js/services/EventDataService.js" charset="utf-8"></script>
+  <script src="./js/services/GravatarUrlBuilder.js" charset="utf-8"></script>
+  <script src="./js/services/CacheSampleFactory.js" charset="utf-8"></script>
+  <script src="./js/services/UserData.js" charset="utf-8"></script>
+</body>
+</html>

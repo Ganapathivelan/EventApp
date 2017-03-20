@@ -1,0 +1,55 @@
+  <div style="padding: 0 10px;">
+    <img ng-src="{{ eventCtrl.event.imageUrl }}" alt="{{ eventCtrl.event.name }}">
+    <br/>
+    <button class="btn" ng-click="eventCtrl.fireReload();">Reload</button>
+    <div class="row">
+      <div class="span11">
+        <h2 ng-style="eventCtrl.myStyle">{{ eventCtrl.event.name | uppercase }}</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span3">
+        <div ng-class="eventCtrl.warningCSS"><strong>Date:</strong> {{ eventCtrl.event.date }}</div>
+        <div><strong>Time:</strong> {{ eventCtrl.event.time }}</div>
+      </div>
+      <div class="span3">
+        <address>
+          <strong>Address:</strong><br />
+          {{ eventCtrl.event.location.address }}
+          {{ eventCtrl.event.location.city }}
+          {{ eventCtrl.event.location.zip }}
+        </address>
+      </div>
+    </div>
+    <hr />
+
+    <h3>Sessions</h3>
+    Order by:
+    <select name="orderCourseBy" ng-model="eventCtrl.sortOrder" class="input-small">
+      <option value="+name">Name</option>
+      <option value="-upVoteCount">Votes</option>
+      <option value="+creatorName">Creator</option>
+    </select>
+
+    Level:
+    <select name="courseDifficulty" ng-model="eventCtrl.difficulty.level" class="input-small">
+      <option value="">All</option>
+      <option value="Introductory">Beginner</option>
+      <option value="Intermediate">Intermediate</option>
+      <option value="Advanced">Advanced</option>
+    </select>
+    <ul class="thumbnails">
+      <li ng-repeat="session in eventCtrl.event.sessions | orderBy:eventCtrl.sortOrder | limitTo:2 | filter:eventCtrl.difficulty">
+        <div class="row session">
+          <up-vote like="eventCtrl.upVoteCount(session);", dislike="eventCtrl.downVoteCount(session);" vote-total="session.upVoteCount"></up-vote>
+          <session-card session-title='{{ session.name }}'>
+            <!--  transclusion on the event-card component will superimpose the next 4 lines of HTML into the eventCard directive via the ng-transclude property as the entry point for the following HTML -->
+            <h6 style="margin-top: 10px;">{{ session.creatorName }}</h6>
+            <span>Duration: {{ session.duration | durations }}</span><br />
+            <span>Level: <strong>{{ session.level }}</strong></span>
+            <p> {{ session.abstract }}</p>
+          </session-card>
+        </div>
+      </li>
+    </ul>
+  </div>

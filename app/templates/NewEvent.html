@@ -1,0 +1,29 @@
+  <div style="padding: 0 10px;">
+    <div class="container">
+      <h1>New Event</h1>
+      <hr />
+      <form name="newEventRequestForm", on-enterkey-press="editEventsCtrl.validateEventInfo(editEventsCtrl.event, newEventRequestForm);">
+        <fieldset>
+          <label for="eventName">Event name:</label>
+          <input type="text" id="eventName" focus-input-field required ng-model="editEventsCtrl.event.name" placeholder="Name of Event..." />
+          <label for="eventDate">Event date:</label>
+          <date-picker id="eventDate" model="editEventsCtrl.event.date"></date-picker>
+          <label for="eventTime">Event time:</label>
+          <input type="text" id="eventTime" focus-input-field ng-model="editEventsCtrl.event.time" placeholder="Start and end time..." />
+          <label for="eventLocation">Event location:</label>
+          <input type="text" id="eventLocation" focus-input-field ng-model="editEventsCtrl.event.location.address" placeholder="Address of event...">
+          <br />
+          <input type="text" id="eventCity" ng-model="editEventsCtrl.event.location.city" class="input-small" placeholder="City..."/>
+          <input type="text" id="eventProvince" ng-model="editEventsCtrl.event.location.province" class="input-small" placeholder="Province..." />
+          <p>{{ editEventsCtrl.event.name }}</p>
+          <label for="eventImageUrl">Image:</label>
+          <input type="text" id="eventImageUrl" ng-model="editEventsCtrl.imageUrl" class="input-xlarge" placeholder="URL of image...." />
+        </fieldset>
+        <img ng-src="{{editEventsCtrl.event.imageUrl}}" alt="{{ editEventsCtrl.event.name }}" title="{{ editEventsCtrl.event.name }}" />
+        <br />
+        <br />
+        <button class="btn btn-primary" ng-disabled="newEventRequestForm.$invalid" ng-click="editEventsCtrl.validateEventInfo(editEventsCtrl.event, newEventRequestForm);" type="submit">Save Event</button>
+        <button class="btn btn-default" ng-click="editEventsCtrl.cancelEdit(newEventRequestForm);" type="button">Cancel</button>
+      </form>
+    </div>
+  </div>

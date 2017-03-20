@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="eventsApp">
+<head>
+  <!--  part of HTML5 routing -->
+  <base href="/">
+  <title>Event Registration</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./css/app.css" />
+  <link rel="stylesheet" href="./lib/jquery-ui-1.12.1.custom/jquery-ui.min.css" />
+</head>
+<body ng-cloak>
+  <div class="container">
+    <div class="navbar">
+      <div class="navbar-inner">
+        <ul class="nav">
+          <li><a href="new-event">Create Event</a></li>
+          <li><a href="edit-profile">Create Profile</a></li>
+          <li><a href="welcome">About us</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <ng-view></ng-view>
+
+  <script src="./lib/bootstrap.min.js" charset="utf-8"></script>
+  <script src="./lib/jquery.min.js" charset="utf-8"></script>
+  <script src="./lib/jquery-ui-1.12.1.custom/jquery-ui.min.js" charset="utf-8"></script>
+  <script src="./lib/angular/angular.min.js" charset="utf-8"></script>
+  <script src="./lib/angular-resource/angular-resource.min.js" charset="utf-8"></script>
+  <script src="./lib/angular-route/angular-route.min.js" charset="utf-8"></script>
+  <script src="./js/app.js" charset="utf-8"></script>
+  <script src="./js/controllers/EventsList.js" charset="utf-8"></script>
+  <script src="./js/controllers/EventsController.js" charset="utf-8"></script>
+  <script src="./js/controllers/EditEventsController.js" charset="utf-8"></script>
+  <script src="./js/controllers/EditProfileController.js" charset="utf-8"></script>
+  <script src="./js/controllers/CacheSampleController.js" charset="utf-8"></script>
+  <script src="./js/controllers/SampleDirectiveController.js" charset="utf-8"></script>
+  <script src="./js/controllers/ControllerToTest.js" charset="utf-8"></script>
+  <script src="./js/directives/sampleDirective.js" charset="utf-8"></script>
+  <script src="./js/directives/eventThumbnail.js" charset="utf-8"></script>
+  <script src="./js/directives/upVoteDirective.js" charset="utf-8"></script>
+  <script src="./js/directives/gravatarView.js" charset="utf-8"></script>
+  <script src="./js/directives/DirectiveWithController.js" charset="utf-8"></script>
+  <script src="./js/directives/collapsibleDirectiveWithTransclusion.js" charset="utf-8"></script>
+  <script src="./js/directives/Datepicker.js" charset="utf-8"></script>
+  <script src="./js/directives/FocusInputField.js" charset="utf-8"></script>
+  <script src="./js/directives/SubmitFormOnEnterkeyDirective.js" charset="utf-8"></script>
+  <script src="./js/filters.js" charset="utf-8"></script>
+  <script src="./js/services/EventDataService.js" charset="utf-8"></script>
+  <script src="./js/services/GravatarUrlBuilder.js" charset="utf-8"></script>
+  <script src="./js/services/CacheSampleFactory.js" charset="utf-8"></script>
+  <script src="./js/services/UserData.js" charset="utf-8"></script>
+  <script src="./js/services/UserData2.js" charset="utf-8"></script>
+  <script src="./js/services/UserDataDependencyFactory.js" charset="utf-8"></script>
+</body>
+</html>

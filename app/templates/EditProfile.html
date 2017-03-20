@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <form name="profileForm">
+        <div class="row-fluid">
+            <div class="span3">
+                <!-- <img ng-src="{{ editProfileCtrl.getGravatarUrl(editProfileCtrl.user.emailAddress); }}" alt="{{ editProfileCtrl.user.username }}" title="{{ editProfileCtrl.user.username }}" /> -->
+                <gravatar email-url="{{ editProfileCtrl.user.emailAddress }}" />
+            </div>
+            <div class="span3">
+                <fieldset>
+                    <label for="userName">User Name:</label>
+                    <input focus id="userName" required ng-pattern="/^[-A-Za-z0-9]{2,20}$/" type="text" placeholder="Username" ng-model="editProfileCtrl.user.userName" />
+                    <label for="password">Password:</label>
+                    <input id="password" required type="password" placeholder="Password" ng-model="editProfileCtrl.user.password" />
+                </fieldset>
+                <div style="margin-top:15px">
+                    <fieldset>
+                        <label for="name">Name:</label>
+                        <input id="name" required type="text" placeholder="Name" ng-model="editProfileCtrl.user.name" />
+                        <label for="emailAddress">Email Address:</label>
+                        <input id="emailAddress" required type="email" placeholder="Email Address" ng-model="editProfileCtrl.user.emailAddress" />
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span6 offset3">
+                <label for="bio">Bio:</label>
+                <textarea id="bio" required rows="6" style="width:97%; color:#52575c" placeholder="Bio" ng-model="editProfileCtrl.user.bio"></textarea>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span6 offset3">
+                <div class="pull-left"><span class="btn" ng-click="editProfileCtrl.clearFormDetails();">Cancel</span></div>
+                <div class="pull-right"><button type="submit" class="btn btn-primary" ng-click="editProfileCtrl.validateFormEntry(profileForm);">Save</button></div>
+            </div>
+        </div>
+    </form>
+</div>
