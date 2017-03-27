@@ -6,7 +6,7 @@
 
   function eventThumbnailFn(){
     var directive = {
-      templateUrl: '../templates/directives/EventThumbnail.html',
+      templateUrl: 'templates/directives/EventThumbnail.html',
       restrict: 'E',
       replace: true,
       scope: {

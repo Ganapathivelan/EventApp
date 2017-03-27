@@ -4,6 +4,7 @@
   <hr>
   <ul class="thumbnails">
     <li ng-repeat="event in eventsListingCtrl.events | orderBy:eventsListingCtrl.sortOrder">
+      <!--  each event item inside the eventsListingCtrl.events array will get passed to the event-thumbnail component -->
       <event-thumbnail event-obj='event' />
     </li>
   </ul>
