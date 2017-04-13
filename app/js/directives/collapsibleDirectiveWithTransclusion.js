@@ -4,7 +4,7 @@
   angular.module('DirectiveWithTransclusion', [])
          .directive('sessionCard', [CollapsibleFn]);
 
-  // transclusion superimposes child HTML elements contained within a directive
+  // transclusion wraps child HTML elements nested inside a directive
   // to use transclusion ensure that the transclude property is set to true and
   // that ng-transclude is used within the template/templateUrl
   function CollapsibleFn(){
