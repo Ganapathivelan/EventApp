@@ -63,7 +63,7 @@ describe('Event Details page 1', function(){
 
   });
 
-  it('Should increment vote count by \'1\' when the up vote count button is clicked', function(){
+  it('Should increment vote count to \'1\' when the up vote count button is clicked', function(){
     // first get the elements which are divs containing the CSS class 'votingButton'
     // as the UpVote directive is inside a repeater, there will be a collection of
     // divs containing this particular class
